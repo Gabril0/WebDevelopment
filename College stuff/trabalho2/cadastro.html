@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica ABC Health</title>
+</head>
+
+<body>
+
+        <header>
+            <h1>Clínica ABC Health</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form action="cadastraCliente.php" autocomplete="on" method="post">
+                <fieldset>
+                    <h2><i>Dados pessoais</i></h2>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" minlength="2" maxlength="50" autofocus required>
+                    </div><br>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div><br>
+                    <div>
+                        <label for="cpf">CPF:</label>
+                    <input type="text" required id="cpf" name="cpf" pattern="\d{3}.\d{3}.\d{3}-\d{2}">
+                    </div><br>
+                    <div>
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" name="idade" required>
+                    </div><br>
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div><br>
+                    <div>
+                        <label for="datanasc">Data de Nascimento:</label>
+                        <input type="date" id="datanasc" name="datanasc">
+                    </div><br>
+                    <div>
+                        <label for="cidadehospital">Escreva o nome da cidade que quer aplicar:</label>
+                        <input type="text" id="cidadehospital" readonly name="cidadehospital"
+                            placeholder="*Atualmente só Uberlândia">
+                    </div><br>
+                    <div>
+                        <fieldset>
+                            <legend>Escolha seu sexo</legend>
+                            <div>
+                                <input type="radio" id="masculino" name="sexo" value="masculino">
+                                <label for="masculino">Masculino</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="feminino" name="sexo" value="feminino">
+                                <label for="feminino">Feminino</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="nb" name="sexo" value="nb">
+                                <label for="nb">Não Binário</label>
+                            </div>
+                        </fieldset>
+                    </div><br>
+                    <div>
+                        <label for="ecivil">Estado Civil: </label>
+                        <select name="ecivil" id="ecivil">
+                            <option value="casado">Casado</option>
+                            <option value="solteiro">Solteiro</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="separadojudicialmente">Separado Judicialmente</option>
+                        </select>
+                    </div><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <h2><i>Endereço</i></h2>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" required>
+                    </div><br>
+                    <div>
+                        <label for="tipologradouro">Tipo de Logradouro: </label>
+                        <select name="tipologradouro" id="tipologradouro" size="4" required>
+                            <option value="rua">Rua</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="praça">Praça</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="logradouro">Logradouro:</label>
+                    <input type="text" id="logradouro" name="logradouro" required>
+                    </div><br>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div><br>
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div><br>
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <input type="text" id="estado" name="estado" required>
+                    </div><br>
+
+                </fieldset>
+                <br>
+                <fieldset>
+                    <div>
+                        <h2><i>Informações Adicionais</i></h2>
+                        <fieldset>
+
+                            <legend>Interesses:</legend>
+                            <label for="filmes">Filmes </label>
+                            <input type="checkbox" id="filmes" name="interesses"><br>
+                            <label for="informática">Informática </label>
+                            <input type="checkbox" id="informática" name="interesses"><br>
+                            <label for="games">Games </label>
+                            <input type="checkbox" id="games" name="interesses"><br>
+                            <label for="livros">Livros </label>
+                            <input type="checkbox" id="livros" name="interesses"><br>
+                            <label for="roupas">Roupas </label>
+                            <input type="checkbox" id="roupas" name="interesses"><br>
+                        </fieldset>
+                        <label for="infcomplementares">Informações Complementares:</label><br>
+                        <textarea name="infcomplementares" id="infcomplementares" cols="60" rows="10" maxlength="200"
+                            placeholder="Digite aqui"></textarea><br>
+
+                        <label for="picupload">Envie uma foto sua: </label>
+                        <input type="file" id="picupload" accept=".png,.jpg,.jpeg">
+                    </div>
+                </fieldset>
+                <br>
+                <input type="hidden" id="cidadeatuante" name="cidadeatuante" value="Uberlândia">
+                <input type="submit" value="Enviar tudo">
+
+            </form>
+            <br>
+        </main>
+        <footer>
+            <i>Av. João Naves de Ávila, Santa Mônica, Uberlândia</i>
+        </footer>
+    </body>
+
+</html>
