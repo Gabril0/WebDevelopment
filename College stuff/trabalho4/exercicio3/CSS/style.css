@@ -69,11 +69,6 @@ main {
 h2 {
     color: #555;
 }
-body{
-    background-color: lightgray;
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    color: rgb(96, 96, 96);
-}
 button, input{
 
     box-sizing: border-box;
