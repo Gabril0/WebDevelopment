@@ -3,7 +3,7 @@ body {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     line-height: 1.5;
     margin: 0 auto;
-    overflow-x: hidden;
+    padding: 0;
 }
 
 @media (max-width: 600px){
@@ -28,7 +28,7 @@ nav {
     color: #eee;   
     position: sticky;
     display: inline-block;
-    padding: 10px;
+    padding: 10px 0px;
     top:0;
     width: 100%;
 
@@ -40,8 +40,7 @@ nav ul {
 }
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
-    padding: 0;
+    padding: 0 15px;
 }
 nav a {
     color: lightgray;
