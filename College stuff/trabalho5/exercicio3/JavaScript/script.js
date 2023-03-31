@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded",function(){
-    const caixa = document.querySelector("div");
+    const caixa = document.querySelector("#alert");
     const meAperte = document.querySelector(".meAperte");
     const ok = document.querySelector(".ok");
     const texto = document.querySelector(".texto");

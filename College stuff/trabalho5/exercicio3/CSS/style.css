@@ -11,7 +11,7 @@ main{
     border-radius: 25px;
     background-color: white;
 
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -39,7 +39,7 @@ div{
 
     visibility: hidden;
 
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
