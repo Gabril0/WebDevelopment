@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/script.js"></script>
+    <title>Exercicio 4</title>
+</head>
+<header>
+    <h1>Clínica ABC Health</h1>
+</header>
+<nav>
+    <section>
+        <ul>
+            <li><button>Home</button></li>
+            <li><button>Galeria</button></li>
+            <li><button>Cadastro</button></li>
+            <li><button>Contato</button></li>
+        </ul>
+    </section>
+</nav>
+<main>
+    <div class="tabs">
+        <section>
+            <h2>Bem vindo à Clínica ABC Health</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+
+            <h2>Nossa Missão</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+
+            <h2>Nossos Valores</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.</p>
+        </section>
+        <section>
+            <h2>Nossa Estrutura</h2>
+
+            <table>
+                <tr>
+                    <td><img src="Images/estrutura1.png" height="200" width="200" alt="Médico bem vestido"></td>
+                    <td><img src="Images/estrutura2.png" height="200" width="200" alt="Cama em ambiente limpo"></td>
+                    <td><img src="Images/estrutura3.png" height="200" width="200" alt="Paciente conversando com médica">
+                    </td>
+                    <td><img src="Images/estrutura4.png" height="200" width="200" alt="Equipamento de soro"></td>
+                </tr>
+                <tr>
+                    <td><img src="Images/estrutura5.png" height="200" width="200"
+                            alt="Enfermeira e paciente apertando as mãos"></td>
+                    <td><img src="Images/estrutura6.png" height="200" width="200"
+                            alt="Funcionarios em ambiente limpo e claro"></td>
+                    <td><img src="Images/estrutura7.png" height="200" width="200"
+                            alt="Sala de cirurgia com equipamentos de ultima geração"></td>
+                    <td><img src="Images/estrutura8.png" height="200" width="200"
+                            alt="Salas extremamente limpas e tecnológicas em um corredor com design futurista"></td>
+                </tr>
+
+            </table>
+        </section>
+        <section>
+            <form action="cadastraCliente.php" autocomplete="on" method="post">
+                <fieldset>
+                    <h2><i>Dados pessoais</i></h2>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" minlength="2" maxlength="50" autofocus required>
+                    </div><br>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div><br>
+                    <div>
+                        <label for="cpf">CPF:</label>
+                        <input type="text" required id="cpf" name="cpf" pattern="\d{3}.\d{3}.\d{3}-\d{2}">
+                    </div><br>
+                    <div>
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" name="idade" required>
+                    </div><br>
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div><br>
+                    <div>
+                        <label for="datanasc">Data de Nascimento:</label>
+                        <input type="date" id="datanasc" name="datanasc">
+                    </div><br>
+                    <div>
+                        <label for="cidadehospital">Escreva o nome da cidade que quer aplicar:</label>
+                        <input type="text" id="cidadehospital" readonly name="cidadehospital"
+                            placeholder="*Atualmente só Uberlândia">
+                    </div><br>
+                    <div>
+                        <fieldset>
+                            <legend>Escolha seu sexo</legend>
+                            <div>
+                                <input type="radio" id="masculino" name="sexo" value="masculino">
+                                <label for="masculino">Masculino</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="feminino" name="sexo" value="feminino">
+                                <label for="feminino">Feminino</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="nb" name="sexo" value="nb">
+                                <label for="nb">Não Binário</label>
+                            </div>
+                        </fieldset>
+                    </div><br>
+                    <div>
+                        <label for="ecivil">Estado Civil: </label>
+                        <select name="ecivil" id="ecivil">
+                            <option value="casado">Casado</option>
+                            <option value="solteiro">Solteiro</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="separadojudicialmente">Separado Judicialmente</option>
+                        </select>
+                    </div><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <h2><i>Endereço</i></h2>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" required>
+                    </div><br>
+                    <div>
+                        <label for="tipologradouro">Tipo de Logradouro: </label>
+                        <select name="tipologradouro" id="tipologradouro" size="4" required>
+                            <option value="rua">Rua</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="praça">Praça</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" name="logradouro" required>
+                    </div><br>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div><br>
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div><br>
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <input type="text" id="estado" name="estado" required>
+                    </div><br>
+
+                </fieldset>
+                <br>
+                <fieldset>
+                    <div>
+                        <h2><i>Informações Adicionais</i></h2>
+                        <fieldset>
+
+                            <legend>Interesses:</legend>
+                            <label for="filmes">Filmes </label>
+                            <input type="checkbox" id="filmes" name="interesses"><br>
+                            <label for="informática">Informática </label>
+                            <input type="checkbox" id="informática" name="interesses"><br>
+                            <label for="games">Games </label>
+                            <input type="checkbox" id="games" name="interesses"><br>
+                            <label for="livros">Livros </label>
+                            <input type="checkbox" id="livros" name="interesses"><br>
+                            <label for="roupas">Roupas </label>
+                            <input type="checkbox" id="roupas" name="interesses"><br>
+                        </fieldset>
+                        <label for="infcomplementares">Informações Complementares:</label><br>
+                        <textarea name="infcomplementares" id="infcomplementares" cols="60" rows="10" maxlength="200"
+                            placeholder="Digite aqui"></textarea><br>
+
+                        <label for="picupload">Envie uma foto sua: </label>
+                        <input type="file" id="picupload" accept=".png,.jpg,.jpeg">
+                    </div>
+                </fieldset>
+                <br>
+                <input type="hidden" id="cidadeatuante" name="cidadeatuante" value="Uberlândia">
+                <input type="submit" value="Enviar tudo">
+
+            </form>
+            <br>
+        </section>
+    </div>
+</main>
+<footer>
+    <i>Av. João Naves de Ávila, Santa Mônica, Uberlândia</i>
+</footer>
+</body>
+
+</html>

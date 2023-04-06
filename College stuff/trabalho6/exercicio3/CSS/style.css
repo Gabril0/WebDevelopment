@@ -1,0 +1,33 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+li{
+    width: 200px;
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    color: black;
+    padding: 7px 10px;
+    margin-bottom: 2px;
+
+}
+.texto{
+    margin-left: 5px;
+
+
+
+}
+.botaoFechar{
+    float: right;
+    font-weight: bold;
+    padding: 0 auto;
+    color: red;
+    border: 0px none;
+    background-color: rgba(255, 0, 0, 0);
+}
+
