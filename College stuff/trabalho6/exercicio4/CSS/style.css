@@ -68,3 +68,13 @@ h2 {
 section.tabOn{
     display: block;
 }
+
+input{
+    background-color: lightgray;
+    border-radius: 15px;
+    border: 0px none;
+}
+
+input:active{
+    border: 0px none;
+}
