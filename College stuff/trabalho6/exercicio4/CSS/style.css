@@ -65,7 +65,7 @@ h2 {
     display: none;
 }
 
-section.tabOn{
+section.tabActive{
     display: block;
 }
 
@@ -77,4 +77,10 @@ input{
 
 input:active{
     border: 0px none;
+}
+
+.contato{
+    padding: 20px;
+    margin: 2% 40%;
+
 }
