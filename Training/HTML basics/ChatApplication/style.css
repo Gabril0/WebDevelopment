@@ -1,0 +1,58 @@
+:root{
+    --vermelhoHighlight:rgb(184, 32, 77);
+    --vermelhoNeutro: rgb(104, 74, 81);
+}
+
+body{
+    background-color: var(--vermelhoHighlight);
+}
+
+main{
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 2%;
+}
+.contacts ul{
+    list-style-type: none;
+}
+.contact{
+    padding: 10px;
+    border: 0px none;
+    background-color: var(--vermelhoHighlight);
+    color: white;
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+.message{
+    background-color: white;
+    color: var(--vermelhoNeutro);
+    font-weight: bolder;
+    border-radius: 25px;
+    padding: 5px;
+    text-align: left;
+    margin: 10px;
+
+}
+
+.chat{
+    padding: 10px;
+    background-color: var(--vermelhoNeutro);
+    border-radius: 25px 25px 3px 3px;
+}
+
+.sendButton{
+    background-color: white;
+    color: var(--vermelhoHighlight);;
+    font-weight: bolder;
+    border-radius: 25px;
+    border: 0 none;
+    font-size: 1.2em;
+    padding: 5px 13px;
+}
+
+#chatWrite{
+    border-radius: 25px;
+    border: 1px  solid var(--vermelhoNeutro) ;
+}
