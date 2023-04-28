@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>  <title>Exercicio 2</title>
+</head>
+<header>
+    <h1>Clínica ABC Health</h1>
+</header>
+<nav>
+    <section>
+        <ul>
+            <li><button>Home</button></li>
+            <li><button>Galeria</button></li>
+            <li><button>Cadastro</button></li>
+            <li><button>Contato</button></li>
+        </ul>
+    </section>
+</nav>
+<main>
+    <div class="container"></div>
+    <form action="mostraContato.php" target="_blank" method="get">
+        <section>
+            <h2>Cadastro de Usuário</h2>
+            <div class="container">
+            
+                <div class="form-floating mb-3">
+                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuário">
+                <label for="usuario">Usuário:</label>
+                </div>
+
+                <div class=" form-floating mb-3">
+                <input type="text" name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem">
+                <label for="mensagem">Mensagem:</label>
+                </div>
+
+                <div class=" form-floating mb-3">
+                <input type="email" name="emailCad" id="emailCad" class="form-control" placeholder="Email">
+                <label for="emailCad">Email:</label>
+                </div>
+                
+            </div>
+        </section>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</main>
+<footer>
+    <i>Av. João Naves de Ávila, Santa Mônica, Uberlândia</i>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExercÍcio 1</title>
+</head>
+
+<body>
+    <h1>Resumo</h1>
+    <h2>Exemplo 1</h2>
+    <p>No exemplo 1 o código recebe os atributos nome e telefone da tabela aluno e faz uma tabela de todos os dados
+        recebidos linha por linha por meio do uso da função <b>fetch()</b>.</p>
+    <h2>Exemplo 2</h2>
+    <p>No exemplo 2 há 2 códigos php, o primeiro é de um código que é vulnerável pela submissão do form, já que o
+        usuário pode escrever código php para manipular o preenchimento e receber acesso ao que não deveria, podendo
+        deletar o banco de dados e fazer outras coisas. Já o segundo código é a maneira correta de fazer a validação, já
+        que transforma os caracteres especiais em elementos html.</p>
+    <h2>Exemplo 3</h2>
+    <p>No exemplo 3, cadastra-cliente recebe os dados do formulário e faz uma validação com parametros em aberto, após
+        isso faz um hash para as senhas e tenta inserir os valores na tabela cliente e depois faz validação de dados
+        duplicados.
+        No Exclui cliente, ele pega o cpf e deleta o cliente com cpf correspondente, antes disso faz validação da
+        stringg usando o prepare.
+        No mostra-clientes, pega os dados da tabela cliente e mostra elas linha a linha usando o fetch, também foi usada
+        a validação dos dados usando htmlspecialchars para evitar vulnerabilidades quando atribuiu os dados no html.</p>
+    <h2>Exemplo 4</h2>
+    <p>No exemplo 4, recebe o hash da senha da tabela cliente e o email, depois disso prepara os dados para evitar
+        vulnerabilidades e procura o email no banco de dados, após isso compara o hash da senha com o do banco de dados
+        e assim verifica se o usuário existe e se a senha está correta.</p>
+    <h2>Exemplo 5</h2>
+    <p>No exemplo 5, em mostra-enderecos-pedidos.php o código pega vários dados da tabela cliente endereco_entrega buscando pelo id do cliente, após isso faz a verificação de caracteres igual nos exercícios anteriores usando htmlspecialchars e mostra os dados no html previnindo ataques.
+        Já na transacao-cadastra-pedido recebe os dados do formulário e cria o hash da senha, após isso insere os dados na tabela cliente(após ter preparado os daddos) e depois de verificar que nada está errado faz o commit.
+    </p>
+</body>
+
+</html>
