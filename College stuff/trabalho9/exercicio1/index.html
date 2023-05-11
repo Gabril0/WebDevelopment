@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    <a href="Exemplos-Ajax-XHR/XHR/index.html">Exemplos do professor</a>
+    <div>
+        <h2>EX1</h2>
+        <p>No index.html do exemplo 1, temos uma definição de style normal usando CSS e uma criação normal de HTML, e
+            então um botão para ativar a requisição AJAX. Esta é feita recebendo o botão em uma variável e então
+            adicionando um listener de click para ela, este que quando acionado vai para uma função de carregar conteúdo
+            extra, esta que abre outra página HTML e coloca-a na div que anteriormente estava o botão. Note que também
+            tratam o erro caso a requisição não consiga ser finalizada. Por fim, manda o XML pelo método send. </p>
+    </div>
+    <div>
+        <h2>EX2</h2>
+        <p>Neste novamente temos a construção ordinária de site e então um input com uma span sem conteúdo na frente(que
+            posteriormente vai mostrar o nome da cidade caso ache no sistema), então existe também um código JS, este
+            que pega o valor do input e usa um listener para que em cada letra digitada ele rode a função buscaCidade(),
+            esta que checa inicialmente se o tamanho é diferente de 9 e então retorna caso seja pois não atende aos
+            requisitos. Caso o input tenha 9 letras, cria-se uma requisição XML, então abre a mesma para o arquivo PHP
+            usando GET com o argumento CEP de valor do input digitado, então faz o tratamento do erro de requisição e do
+            erro de rede, mostrando no console dados do erro e então envia o dado para o PHP. Após isso ele coloca a
+            resposta no spam previamente vazio.</p>
+        <p>No PHP do exemplo, ele guarda em uma variavel o valor recebido pelo GET e faz uma comparação dos valores,
+            então faz echo com a resposta, caso tenha erro ele coloca o codigo 404 e manda uma mensagem de erro.</p>
+    </div>
+    <div>
+        <h2>EX3</h1>
+        <p>Temos um formulário para preencher 4 dados, sendo um o CEP, e input e labels correspondentes e ordinários de
+            um formulário HTML. Mas o que diferencia neste é que ele tem um código com requisição XML. O código recebe o
+            valor digitado no input CEP e coloca um listener para cada letra digitada, então inicializa a função, esta
+            que novamente checa o tamanho da string e retorna caso não seja do tamanho certo. Então é iniciada a
+            requisição XML, com o tipo de resposta sendo um JSON desta vez, enviando o CEP para um arquivo PHP com CEP
+            de argumento digitado previamente, entao faz um tratamento de erro para ver se a resposta voltou do servidor
+            e se foi corretamente recebe a resposta em uma variavel endereco, acha o elemento form na arvore DOM e então
+            atribui os valores ao formulário com os recebido do json.</p>
+        <p>No PHP temos um construtor do php para receber e atribuir os dados, e então temos a checagem do CPF, este que
+            é recebido pelo método GET, e então temos a criação de uma tupla de dados que será usada como resposta JSON
+            para o HTML, após isso muda-se o header para método json e envia os dados pelo echo json_encode().</p>
+    </div>
+    <div>
+        <h2>EX4</h2>
+        <p>HTML e CSS idênticos ao do exercício anterior, a diferença é que na parte de script se recebe o JSON e coloca
+            em um bloco try catch, este que tenta converter para um objeto javascript, além de não precisar de
+            especificar o tipo de resposta XML previamente.</p>
+        <p>O PHP é identico ao da questão anterior, lembrando que se tem a criação de objetos dentro do PHP para que ao
+            receber a resposta JSON como objeto JavaScript, suas variáveis possam ser utilizadas usando o princípio de
+            orientação à objetos, deixando o código mais fácil.</p>
+    </div>
+    <div>
+        <h2>EX5</h2>
+        <p>HTML idêntico ao do exercício 3 e 4, com exceção da parte de JS, esta que cria um objeto JavaScript com email
+            e chave de API que juntos da resposta do CEP enviam o json pro servidor usando os métodos setRequestHeader()
+            e send(), atentando-se a conversão do objeto JS para string ao passar os argumentos.</p>
+        <p>O PHP deste exemplo recebe a string enviada por meio do método file_get_contents() e decodifica os dados
+            usando json_decode() para que possa entender, então pega o valor do cep no objeto por meio de $cep =
+            $dados->cep, que é o acesso dentro daquele objeto javascript criado previamente, e no restante faz igual os
+            outros exemplos na parte de atribuição, envio e comparação. </p>
+    </div>
+    <div>
+        <h2>EX6</h2>
+        <p>Nesse se tem duas páginas HTML, a index.html que serve como página de login e a home.html que recebe o
+            usuário quando logado, a parte da home é bem simples e só contem textos e um link para sair. Já o index
+            contém um formulário para o preenchimento de login e senha e um botão para enviar. Na parte de JavaScript,
+            temos uma função que carrega assim que a página termina seu load, então recebe este formulário e coloca um
+            listener para quando ele for enviado, executando assim uma outra função chamada sendForm(), esta que abre
+            uma requisição XML e então coloca a requisição como POST e faz a verificação se a resposta chegou na página
+            por meio do número de status. Após isso recebe a resposta por meio de uma variável e então checa o objeto
+            recebido em seu campo success, este que é um boolean que só permite ir para a próxima página caso retorne
+            true do PHP, caso contrário o campo de senha é limpado e a página foca este campo novamente.</p>
+        <p>No PHP temos um construtor de objeto PHP para enviar no json, após isso recebe os dados por meio da
+            atribuição usando POST e checa em um if os dados do formulário de email e senha, caso sejam corretor o valor
+            boolean muda pra true e o objeto retornado vai permitir que o usuário acesse o resto da página, já
+            redirecionando o usuário pelo próprio argumento do objeto, este que é recebido no index.html e atribuido na
+            parte de JS por meio do window.location.</p>
+    </div>
+
+</body>
+
+</html>
