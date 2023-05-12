@@ -21,8 +21,12 @@ $cep = $_GET['cep'] ?? '';
 
 require "conexaoMysql.php";
 $pdo = mysqlConnect();
+$sql = <<<SQL
+  SELECT rua, bairro, cidade FROM trabalho9 WHERE cep = ?
+  SQL;
 
-$stmt = $pdo->prepare('SELECT rua, bairro, cidade FROM trabalho9 WHERE cep = ?');
+
+$stmt = $pdo->prepare($sql);
 $stmt->execute([$cep]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
