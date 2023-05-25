@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rolagem Infinita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #dedede;
+      font-family: Helvetica;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #888;
+    }
+
+    .item {
+      background-color: white;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .item-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 2rem;
+    }
+
+    .item-name {
+      font: 2em Verdana;
+      color: #888;
+    }
+
+    .item-price {
+      font: 2em Verdana;
+      color: darkgreen;
+      margin-left: 2rem;
+    }
+
+    .item-price::before {
+      content: 'R$ ';
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="products">
+    <h2>Nossos produtos</h2>
+
+    <template id="template"> <!--template cria uma separação que sempre vai ser desta maneira, como um objeto -->
+      <div class="item">
+        <img class="item-image" src="images/{{prod-image}}"></img>
+        <span class="item-name">{{prod-name}}</span>
+        <span class="item-price">{{prod-price}}</span>
+      </div>
+    </template>
+
+  </section>
+
+  <script>
+
+    function renderProducts(newProducts) { //função para renderizar os produtos, recebe um novo produtor como argumento
+
+      const prodsSection = document.getElementById("products"); //pega a parte da section e atribui
+      const template = document.getElementById("template"); //pega a parte de template e atribui
+
+      for (let product of newProducts) { //para cada produtos da lista
+        let html = template.innerHTML //muda o html para
+          .replace("{{prod-image}}", product.imagePath) //a imagem do produto
+          .replace("{{prod-name}}", product.name) // o nome do produto
+          .replace("{{prod-price}}", product.price); //o preço do produto
+
+        prodsSection.insertAdjacentHTML("beforeend", html); //insere o html
+      };
+    }
+
+    async function loadProducts() { //função assincrona para carregar os produtos
+
+      try {
+        let response = await fetch("more-products.php"); //chama o php
+        if (!response.ok) throw new Error(response.statusText); //verifica a resposta
+        var products = await response.json(); //atribui a variavel à resposta
+      }
+      catch (e) { //trata erro
+        console.error(e);
+        return;
+      }
+
+      renderProducts(products); //chamada para renderizar os produtos
+    }
+
+    window.onload = function () { //espera a página carregar e chama a função assíncrona de carregar produtos
+      loadProducts();
+    }
+
+    window.onscroll = function () { //listener de scroll
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { //verifica se o tamanho da página relativo esta maior ou igual o offset, 
+        //que significa que a página vai carregar mais produtos quando o usuário for muito para baixo com o scroll, enquanto se ficar parado novos elementos 
+        //não serão carregados;
+        loadProducts();
+      }
+    };
+
+  </script>
+
+</body>
+
+</html>
