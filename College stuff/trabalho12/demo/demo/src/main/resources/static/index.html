@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testando API RESTful</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Testando API RESTful</h1>
+
+    <form id="addressForm" class="mt-4">
+        <div class="form-group">
+            <label for="cepInput">CEP:</label>
+            <input type="text" class="form-control" id="cepInput" required>
+        </div>
+        <div class="form-group">
+            <label for="ruaInput">Rua:</label>
+            <input type="text" class="form-control" id="ruaInput" required>
+        </div>
+        <div class="form-group">
+            <label for="bairroInput">Bairro:</label>
+            <input type="text" class="form-control" id="bairroInput" required>
+        </div>
+        <div class="form-group">
+            <label for="cidadeInput">Cidade:</label>
+            <input type="text" class="form-control" id="cidadeInput" required>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="getAddress()">Buscar Endereço (GET)</button>
+        <button type="button" class="btn btn-primary" onclick="createAddress()">Criar Novo Endereço (POST)</button>
+        <button type="button" class="btn btn-primary" onclick="deleteAddress()">Apagar pelo CEP (DELETE)</button>
+        <button type="button" class="btn btn-primary" onclick="listAddresses()">Listar Todos os Endereços</button>
+    </form>
+</div>
+
+<script>
+        async function getAddress() {
+            const cep = document.getElementById('cepInput').value;
+            const response = await fetch(`/address/${cep}`);
+            const address = await response.json();
+            if (response.ok) {
+                document.getElementById('ruaInput').value = address.rua;
+                document.getElementById('bairroInput').value = address.bairro;
+                document.getElementById('cidadeInput').value = address.cidade;
+            } else {
+                alert('Endereço não encontrado');
+            }
+        }
+
+        async function createAddress() {
+            const cep = document.getElementById('cepInput').value;
+            const rua = document.getElementById('ruaInput').value;
+            const bairro = document.getElementById('bairroInput').value;
+            const cidade = document.getElementById('cidadeInput').value;
+
+            const address = {
+                cep: cep,
+                rua: rua,
+                bairro: bairro,
+                cidade: cidade
+            };
+
+            const response = await fetch('/address', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(address)
+            });
+
+            if (response.ok) {
+                alert('Endereço criado com sucesso');
+            } else {
+                alert('Erro ao criar endereço');
+            }
+        }
+
+        async function deleteAddress() {
+            const cep = document.getElementById('cepInput').value;
+
+            const response = await fetch(`/address/${cep}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert('Endereço deletado com sucesso');
+            } else {
+                alert('Endereço não encontrado');
+            }
+        }
+
+        async function listAddresses() {
+            const response = await fetch('/address');
+            const addresses = await response.json();
+            let addressList = '';
+            addresses.forEach(address => {
+                addressList += `CEP: ${address.cep}, Rua: ${address.rua}, Bairro: ${address.bairro}, Cidade: ${address.cidade}\n`;
+            });
+            alert(addressList);
+        }
+    </script>
+</body>
+</html>
